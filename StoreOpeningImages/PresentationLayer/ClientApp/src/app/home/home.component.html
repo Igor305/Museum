@@ -1,0 +1,19 @@
+<section>
+    <input [(ngModel)]="shopNumber" autofocus class = "visually-hidden" (keyup.backspace) = "previousImage()" (keyup.enter) = "onEnter()">
+    <article *ngIf="images == undefined || shopNumber.length != 0">
+        <div class = "numberShop">
+            Введите номер магазина:
+            <input  [value] ="shopNumber" (keyup.enter) ="onEnter()">
+        </div>
+    </article>
+    <article *ngIf="images != undefined && images.fileContentModels.length == 0 && shopNumber.length == 0">
+        <div class = "numberShop">
+            У данного магазина отсутствуют изображения.
+        </div>
+    </article>
+    <article *ngIf="images != undefined && images.fileContentModels.length > 0 && shopNumber.length == 0">
+        <form onsubmit="nextImage()">
+            <img src="data:image/png;base64,{{img}}" height="1024" width="600" />
+        </form>      
+    </article>
+</section>

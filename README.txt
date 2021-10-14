@@ -1,3 +1,0 @@
-# Museum
-
-git checkout dev
