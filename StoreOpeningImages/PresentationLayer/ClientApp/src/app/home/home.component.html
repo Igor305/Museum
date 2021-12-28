@@ -1,19 +1,19 @@
 <section>
     <input [(ngModel)]="shopNumber" autofocus class = "visually-hidden" (keyup.backspace) = "previousImage()" (keyup.enter) = "onEnter()">
-    <article *ngIf="images == undefined || shopNumber.length != 0">
-        <div class = "numberShop">
-            Введите номер магазина:
-            <input  [value] ="shopNumber" (keyup.enter) ="onEnter()">
-        </div>
+    <article class ="home" *ngIf="(images == undefined || shopNumber.length != 0) && !isWait">
+        <img src="../../assets/background.svg"/>
+        <input class="input"  [value] ="shopNumber" (keyup.enter) ="onEnter()">
+    </article>
+    <article *ngIf="isWait">
+        <img src="../../assets/wait.svg"/>
+        <img class= "animation" src="../../assets/animation.gif"/>
     </article>
     <article *ngIf="images != undefined && images.fileContentModels.length == 0 && shopNumber.length == 0">
-        <div class = "numberShop">
-            У данного магазина отсутствуют изображения.
-        </div>
+        <img src="../../assets/notFound.svg"/>
     </article>
     <article *ngIf="images != undefined && images.fileContentModels.length > 0 && shopNumber.length == 0">
         <form onsubmit="nextImage()">
-            <img src="data:image/png;base64,{{img}}" height="1024" width="600" />
-        </form>      
+            <img class="imgs" src="data:image/png;base64,{{img}}"/>
+        </form>
     </article>
 </section>

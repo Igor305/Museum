@@ -1,6 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/Montserrat/Montserrat-Black.ttf")
+ }
+
+html{
+  height: 720px;
+  width: 1280px;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+}
+
 a {
   color: #0366d6;
 }

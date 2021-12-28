@@ -33,6 +33,7 @@ namespace PresentationLayer
             services.AddScoped<IMediaFoldersRepository, MediaFoldersRepository>();
             services.AddScoped<IFilesRepository, FilesRepository>();
             services.AddScoped<IFileContentsRepository, FileContentsRepository>();
+            services.AddScoped<IShopsRepository, ShopsRepository>();
             services.AddScoped<IShopsService, ShopsService>();
 
             MapperConfiguration mapperconfig = new MapperConfiguration(cfg =>

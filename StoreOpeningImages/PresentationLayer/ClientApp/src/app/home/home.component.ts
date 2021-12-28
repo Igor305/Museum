@@ -14,14 +14,16 @@ export class HomeComponent {
   img : ArrayBuffer;
   numberImg : number = 0;
   timer : NodeJS.Timeout;
+  isWait : boolean = false;
 
   constructor(private shopsService : ShopsService,private host: ElementRef){
   }
 
   public async onEnter(){
 
-    if (this.shopNumber.length == 0){
+    this.isWait = true;
 
+    if (this.shopNumber.length == 0){
       this.nextImage();
     }
 
@@ -31,9 +33,10 @@ export class HomeComponent {
     this.timer = setInterval(()=> this.nextImage(), 3000);
     this.images = await this.shopsService.getImages(Number.parseInt(this.shopNumber));
     this.shopNumber = "";
-    }
 
-     this.getImage();
+    }
+    this.isWait = false;
+    this.getImage();
   }
 
   public getImage()
@@ -43,7 +46,9 @@ export class HomeComponent {
 
   public nextImage(){
 
-    console.log(this.images.fileContentModels);
+    if (this.images != undefined && this.images.fileContentModels.length == 0 && this.shopNumber.length == 0){
+      this.images = undefined;
+    }
     if (this.images.fileContentModels.length == this.numberImg+1){
       this.images = null;
     }

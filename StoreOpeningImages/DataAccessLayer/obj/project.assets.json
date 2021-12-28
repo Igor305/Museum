@@ -5801,11 +5801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\i.talavyria\\Desktop\\project\\Museum\\StoreOpeningImages\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\i.talavyria\\Desktop\\project\\Angular\\Museum\\StoreOpeningImages\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\i.talavyria\\Desktop\\project\\Museum\\StoreOpeningImages\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectPath": "C:\\Users\\i.talavyria\\Desktop\\project\\Angular\\Museum\\StoreOpeningImages\\DataAccessLayer\\DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\i.talavyria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\i.talavyria\\Desktop\\project\\Museum\\StoreOpeningImages\\DataAccessLayer\\obj\\",
+      "outputPath": "C:\\Users\\i.talavyria\\Desktop\\project\\Angular\\Museum\\StoreOpeningImages\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\i.talavyria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5860,7 +5860,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

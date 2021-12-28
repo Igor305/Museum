@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Osp0FtVCkVpYXRNR+ITnYqcQCKQd/tajlinS4YDehEMOzVBFWm5dRLpIYr0DUqYF/NYrPa9zhpIAgZTtImiShA==",
+  "dgSpecHash": "bTkgOlf2R0JbIcn2qVh+iT4ifuGD9FgZUdN7GbVlSZlHr8GFYr1dUWZwa3GCZAzwlcBkYgVQVF0RKz1NRSLDxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\i.talavyria\\Desktop\\project\\Museum\\StoreOpeningImages\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+  "projectFilePath": "C:\\Users\\i.talavyria\\Desktop\\project\\Angular\\Museum\\StoreOpeningImages\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\i.talavyria\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\i.talavyria\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

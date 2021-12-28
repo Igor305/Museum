@@ -15,24 +15,26 @@ namespace BusinessLogicLayer.Services
         private readonly IMediaFoldersRepository _mediaFoldersRepository;
         private readonly IFilesRepository _filesRepository;
         private readonly IFileContentsRepository _fileContentsRepository;
+        private readonly IShopsRepository _shopsRepository;
 
         private readonly IMapper _mapper;
 
-        public ShopsService(IFoldersRepository foldersRepository, IMediaFoldersRepository mediaFoldersRepository, IFilesRepository filesRepository, IFileContentsRepository fileContentsRepository, IMapper mapper)
+        public ShopsService(IFoldersRepository foldersRepository, IMediaFoldersRepository mediaFoldersRepository, IFilesRepository filesRepository, IFileContentsRepository fileContentsRepository, IShopsRepository shopsRepository, IMapper mapper)
         {
             _foldersRepository = foldersRepository;
             _mediaFoldersRepository = mediaFoldersRepository;
             _filesRepository = filesRepository;
             _fileContentsRepository = fileContentsRepository;
+            _shopsRepository = shopsRepository;
 
             _mapper = mapper;
         }
 
-        public async Task<FileContentResponseModel> getImages(int? shopId)
+        public async Task<FileContentResponseModel> getImages(int? shopNumber)
         {
             FileContentResponseModel fileContentResponseModel = new FileContentResponseModel();
 
-            if (shopId == null)
+            if (shopNumber == null)
             {
                 fileContentResponseModel.Status = 1;
                 fileContentResponseModel.Message = $"ShopId = null";
@@ -47,6 +49,8 @@ namespace BusinessLogicLayer.Services
                 fileContentResponseModel.Message = $"FolderId = null";
                 return fileContentResponseModel;
             }
+
+            int? shopId = await _shopsRepository.getId(shopNumber);
 
             int? mediaFolderId = await _mediaFoldersRepository.getId(shopId, folderId);
 

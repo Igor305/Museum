@@ -20,7 +20,7 @@ namespace DataAccessLayer.Repositories
         public async Task<List<FileContent>> getImages(List<int> ids)
         {
 
-            List<FileContent> fileContents = await _shopsContext.FileContents.Where(x=>ids.Contains(x.Id)).ToListAsync();
+            List<FileContent> fileContents = await _shopsContext.FileContents.Where(x=>ids.Contains(x.FileId)).ToListAsync();
 
             return fileContents;
         }
