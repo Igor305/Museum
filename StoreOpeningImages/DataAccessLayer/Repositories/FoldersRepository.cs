@@ -17,7 +17,7 @@ namespace DataAccessLayer.Repositories
 
         public async Task<int> getId()
         {
-            int id = await _shopContext.Folders.Where(x=>x.Name == "ОТКРЫТИЕ").Select(x=>x.Id).FirstOrDefaultAsync();
+            int id = await _shopContext.Folders.Where(x=>x.Name == "ВІДКРИТТЯ").Select(x=>x.Id).FirstOrDefaultAsync();
 
             return id;
         }

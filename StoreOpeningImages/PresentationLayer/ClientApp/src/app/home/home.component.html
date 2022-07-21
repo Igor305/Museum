@@ -1,5 +1,5 @@
 <section>
-    <input [(ngModel)]="shopNumber" autofocus class = "visually-hidden" (keyup.backspace) = "previousImage()" (keyup.enter) = "onEnter()">
+    <input [(ngModel)]="shopNumber" maxlength="5" autofocus class = "visually-hidden" (keyup.backspace) = "previousImage()" (keyup.enter) = "onEnter()">
     <article class ="home" *ngIf="(images == undefined || shopNumber.length != 0) && !isWait">
         <img src="../../assets/background.svg"/>
         <input class="input"  [value] ="shopNumber" (keyup.enter) ="onEnter()">

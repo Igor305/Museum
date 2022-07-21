@@ -21,22 +21,26 @@ export class HomeComponent {
 
   public async onEnter(){
 
-    this.isWait = true;
+    if (this.shopNumber != ""){
 
-    if (this.shopNumber.length == 0){
-      this.nextImage();
+      this.isWait = true;
+
+      if (this.shopNumber.length == 0){
+        this.nextImage();
+      }
+
+      if (this.shopNumber.length != 0){
+
+        this.numberImg = 0;
+        clearInterval(this.timer);
+        this.images = await this.shopsService.getImages(Number.parseInt(this.shopNumber));
+        this.timer = setInterval(()=> this.nextImage(), 3000);
+        this.shopNumber = "";
+
+      }
+      this.isWait = false;
+      this.getImage();
     }
-
-    if (this.shopNumber.length != 0){
-    this.numberImg = 0;
-    clearInterval(this.timer);
-    this.timer = setInterval(()=> this.nextImage(), 3000);
-    this.images = await this.shopsService.getImages(Number.parseInt(this.shopNumber));
-    this.shopNumber = "";
-
-    }
-    this.isWait = false;
-    this.getImage();
   }
 
   public getImage()
